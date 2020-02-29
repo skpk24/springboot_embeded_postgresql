@@ -1,0 +1,61 @@
+Expected time to complete all 3 problems - 2 hours.
+Problem 1:
+These is a class provided (com.ilinks.interview.controller.Problem1) in which you need to write the code to develop a rest API
+which will read the file myMS123466.xml from resource folder and convert its
+xml content into json and finally the rest API will return that JSON content.
+
+To test, we will call the API in the following way:
+
+Expected Request:
+curl -i -XGET http://localhost:8080/api/v1/ms
+Expected Output:
+{"ObjectDefinition":{"variables":{"variable":[{"mandatoryArray":false,"displayName":"view_name","values":{"value":{"displayValue":"val1_disp","content":111}},"classes":{"class":["string","myclass"]},"displayOrder":0,"increment":1,"fullDisplayName":"view_name","localVarNameMatch":"","type":"String","displayNameHeader":"view_name","arrayCanEdit":true,"groupDisplayName":"","remoteVarNameMatch":"","default":"L3","arrayCanMove":true,"selector":false,"groupSeparator":"","isSearchable":false,"keepOnImport":false,"isMandatory":true,"visible":true,"editable":true,"behaviors":{"behaviour":[{"displayName":"new_var0","displayOrder":0,"name":"params.new_var0","startIncrement":false,"type":"String","maxLength":100,"selectorValue":"selector_val1"},{"displayName":"new_var2","displayOrder":0,"name":"params.new_var2","startIncrement":false,"type":"String","maxLength":100,"selectorValue":"selector_val1"}]},"startIncrement":0,"isUniqueGlobal":false,"onlyDetailView":true,"isUserLocked":true,"sections":{"section":["String","mysection"]},"arrayCanRemove":true,"refDeviceIdVar":"","arrayCanAdd":true,"name":"params.view_name","refServiceURI":"","isGrouped":true},{"mandatoryArray":false,"displayName":"object_id","values":{"value":{"displayValue":"val1_disp","content":111}},"classes":{"class":["string","myclass"]},"displayOrder":0,"increment":1,"fullDisplayName":"object_id","localVarNameMatch":"","type":"String","displayNameHeader":"object_id","arrayCanEdit":true,"groupDisplayName":"","remoteVarNameMatch":"","default":"L3","arrayCanMove":true,"selector":false,"groupSeparator":"","isSearchable":false,"keepOnImport":false,"isMandatory":false,"visible":true,"editable":true,"behaviors":{"behaviour":[{"displayName":"new_var0","displayOrder":0,"name":"params.new_var0","startIncrement":false,"type":"String","maxLength":100,"selectorValue":"selector_val1"},{"displayName":"new_var2","displayOrder":0,"name":"params.new_var2","startIncrement":false,"type":"String","maxLength":100,"selectorValue":"selector_val1"}]},"startIncrement":0,"isUniqueGlobal":false,"onlyDetailView":false,"isUserLocked":true,"sections":{"section":["String","mysection"]},"arrayCanRemove":true,"refDeviceIdVar":"","arrayCanAdd":true,"name":"params.object_id","refServiceURI":"","isGrouped":false}],"frozen":0},"information":{"visibility":0,"icon":"none","sortvariable":"param._order","description":"","importrank":0,"configType":"","sortascending":false,"sortnumerical":false,"createTemplateObject":"","importIfMandatoryPresent":false,"createTemplateId":0,"defaultDisplay":false,"name":"myMS123466","displayField":"none","dynamic":false,"reorderinstances":false,"maxInstances":0,"relatedObjects":"","sortauto":false,"order":0,"group":"Default","importonce":false},"example":"none"}}
+
+Problem 2
+There is a class provided - com.ilinks.interview.controller.Problem2. You need to use this class to create an API
+which will retrieve the data from embedded postgres table and return them in json format.
+In this problem,
+task 1 - Embed a postgres database. you can use this one - https://github.com/yandex-qatools/postgresql-embedded
+task 2 - Create a table using following and insert some data
+CREATE TABLE contact (
+	con_id numeric(8) NOT NULL,
+	con_civil varchar(3),
+	con_nom varchar(256),
+	con_prenom varchar(256),
+	con_tel varchar(20),
+	con_email varchar(300),
+	con_fax varchar(20),
+	con_adr1 varchar(256),
+	con_adr2 varchar(256),
+	con_adr3 varchar(256),
+	con_codpos varchar(10),
+	con_ville varchar(256),
+	con_pays varchar(100),
+	con_natact varchar(50),
+	con_dialang char(3),
+	con_ackmail numeric(1) NOT NULL,
+	con_lastupdate timestamp NOT NULL,
+	con_lastupdate_id numeric(8) NOT NULL
+) ;
+task 3: create a rest API to return all rows from this table in the json format.
+
+Expected REST API Call
+curl -i -XGET http://localhost:8080/api/db/v1/data
+
+Expected output:
+I should get all the data from table in json format.
+
+Problem 3:
+There is a class provided com.ilinks.interview.Problem3 - to sort a list of numbers. But, there is an issue in this class.
+You need to find out what is the issue and fix it.
+
+Expected Input:
+5
+3
+7
+9
+1
+
+Expected output:
+1 3 5 7 9
+
